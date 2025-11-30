@@ -54,9 +54,24 @@ shape = SubResource("RectangleShape2D_attack")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
-limit_left = -1000
-limit_top = -1000
-limit_right = 2000
+limit_left = -100
+limit_top = -500
+limit_right = 100000
 limit_bottom = 1000
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0
+
+[node name="JumpSound" type="AudioStreamPlayer" parent="."]
+volume_db = -5.0
+
+[node name="ShootSound" type="AudioStreamPlayer" parent="."]
+volume_db = -8.0
+
+[node name="HurtSound" type="AudioStreamPlayer" parent="."]
+volume_db = -5.0
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="."]
+volume_db = -3.0
+
+[node name="CoinSound" type="AudioStreamPlayer" parent="."]
+volume_db = -6.0

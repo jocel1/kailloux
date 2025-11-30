@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://shop3kailloux"]
+
+[ext_resource type="Script" path="res://scenes/world/objects/shop.gd" id="1_shop"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_shop"]
+size = Vector2(80, 60)
+
+[node name="Shop" type="Area2D"]
+collision_layer = 8
+collision_mask = 1
+script = ExtResource("1_shop")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -20)
+scale = Vector2(2, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_shop")
+
+[node name="InteractionLabel" type="Label" parent="."]
+offset_left = -60.0
+offset_top = -80.0
+offset_right = 60.0
+offset_bottom = -20.0
+horizontal_alignment = 1
+vertical_alignment = 1

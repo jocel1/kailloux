@@ -39,27 +39,44 @@ func _on_body_entered(body: Node2D) -> void:
 	if body == shooter:
 		return
 
-	if body.has_method("take_damage"):
-		body.take_damage(damage, shooter)
+	if body.is_in_group("enemies") and body.has_method("take_damage"):
+		# Calculer les dégâts avec bonus
+		var total_damage = damage + _get_damage_bonus()
+		# Passer la direction comme knockback
+		body.take_damage(total_damage, direction)
+		print("Projectile hit enemy: ", body.name, " (", total_damage, " dmg)")
 
-	if body.has_method("on_hit"):
-		body.on_hit(self)
+		# Donner du soul au tireur
+		if shooter and shooter.has_method("gain_soul"):
+			shooter.gain_soul(10)
 
-	_destroy()
+		_destroy()
+
+func _get_damage_bonus() -> int:
+	if shooter and shooter.has_meta("damage_bonus"):
+		return shooter.get_meta("damage_bonus")
+	return 0
 
 func _on_area_entered(area: Area2D) -> void:
 	var parent = area.get_parent()
 	if parent == shooter:
 		return
 
-	if parent.has_method("take_damage"):
-		parent.take_damage(damage, shooter)
+	if parent.is_in_group("enemies") and parent.has_method("take_damage"):
+		var total_damage = damage + _get_damage_bonus()
+		parent.take_damage(total_damage, direction)
+		print("Projectile hit enemy via area: ", parent.name, " (", total_damage, " dmg)")
 
-	if parent.has_method("on_hit"):
-		parent.on_hit(self)
+		if shooter and shooter.has_method("gain_soul"):
+			shooter.gain_soul(10)
+
+		_destroy()
 
 func _on_lifetime_timeout() -> void:
 	_destroy()
 
 func _destroy() -> void:
-	queue_free()
+	# Petit effet visuel avant de disparaitre
+	var tween = create_tween()
+	tween.tween_property(sprite, "modulate:a", 0.0, 0.1)
+	tween.tween_callback(queue_free)

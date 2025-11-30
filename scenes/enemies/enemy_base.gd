@@ -10,6 +10,7 @@ signal hit_player(damage: int)
 @export var speed: float = 60.0
 @export var detection_range: float = 150.0
 @export var patrol_distance: float = 100.0
+@export var currency_drop: int = 50  # K à donner quand tué
 
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var detection_area: Area2D = $DetectionArea
@@ -126,6 +127,11 @@ func take_damage(amount: int, knockback_dir: Vector2 = Vector2.ZERO) -> void:
 func _die() -> void:
 	is_dead = true
 	died.emit()
+
+	# Donner des K au joueur
+	GameManager.add_currency(currency_drop)
+	GameManager.on_enemy_killed()
+	GameManager.on_currency_earned(currency_drop)
 
 	# Death animation
 	var tween = create_tween()

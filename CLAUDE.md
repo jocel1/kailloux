@@ -405,6 +405,95 @@ godot --export-release "Linux/X11" build/linux/kailloux.x86_64
 godot --export-release "Web" build/web/index.html
 ```
 
+## Fonctionnalités Implémentées
+
+### Style visuel des personnages
+- **Blobs mignons** : Corps ronds style Kirby avec grands yeux expressifs
+- **Mains** (pas de pieds) : Petites mains sur les côtés du corps
+- **Attaque** : Les blobs lancent leurs mains comme projectiles
+
+### Système d'attaque par projectile
+- **Fichiers** : `scenes/player/arm_projectile.tscn`, `arm_projectile.gd`
+- Le joueur lance sa main dans la direction choisie (4 directions)
+- Le projectile inflige des dégâts aux ennemis
+- Pogo bounce si attaque vers le bas en l'air
+- Bonus de dégâts achetable au shop
+
+### Génération procédurale de niveaux
+- **Fichiers** : `scripts/world/procedural_map_generator.gd`, `scenes/world/maps/procedural_level.tscn`
+- Taille de map progressive : 3000px + 500px par niveau
+- Contraintes physiques respectées :
+  - Hauteur max saut : 130px
+  - Distance max saut : 200px
+- Génération du sol avec trous sautables (max 200px)
+- Plateformes à hauteurs variées (min 5 par niveau)
+- Seed sauvegardé pour restart identique après mort
+
+### Système de progression
+- **Difficulté croissante** :
+  - Niveau 1 : 3000px, ennemis vitesse 60
+  - +500px et +10 vitesse par niveau
+  - Densité d'ennemis augmente (multiplicateur 0.85)
+- **Porte de sortie** : À la fin de chaque niveau, déclenche le niveau suivant
+- **Mort** : Restart du même niveau (même seed = même map)
+
+### Système de récompenses par hauteur
+- Plus on monte = plus de récompenses
+- Probabilité de coffres :
+  - Sol : 5%
+  - Plateformes basses : 15%
+  - Plateformes moyennes : 30%
+  - Plateformes hautes : 50%
+- Types de coffres :
+  - Normal (60%) : donne K
+  - Gem (25%) : donne K x3
+  - Piège (15%) : vide/dégâts
+
+### Système de monnaie (K)
+- Les ennemis drop 50K à leur mort
+- Les coffres donnent des K selon leur type et hauteur
+- Dépensable au shop
+
+### Shop (Marchand)
+- **Fichiers** : `scenes/world/objects/shop.tscn`, `shop.gd`
+- Un seul shop par niveau, placé au sol à 80% de la map
+- Items disponibles :
+  - Soin : 30K (+1 PV)
+  - Vitesse : 50K (+20% vitesse)
+  - Force : 75K (+1 dégât)
+  - Double saut : 100K
+
+### HUD (Interface)
+- **Fichiers** : `scenes/ui/hud.tscn`, `hud.gd`
+- Jauge de vie avec couleur dynamique (vert → orange → rouge)
+- Affichage du niveau actuel
+- Compteur de K (monnaie)
+- Slots d'items (1, 2, 3)
+
+### Fichiers clés ajoutés
+```
+scenes/world/objects/
+├── platform.tscn          # Plateforme réutilisable
+├── shop.tscn + shop.gd    # Stand de marchand
+├── exit_door.tscn + exit_door.gd  # Porte de fin de niveau
+└── chest.gd               # Modifié pour currency_amount, is_gem_chest
+
+scripts/world/
+└── procedural_map_generator.gd  # Générateur de niveaux
+
+assets/sprites/environment/
+├── shop_stand.svg         # Sprite du marchand
+└── exit_door.svg          # Sprite de la porte
+```
+
+### Variables GameManager importantes
+```gdscript
+var current_level: int = 1
+var current_level_seed: int = 0  # Pour restart identique
+var is_restart: bool = false     # Distingue mort vs niveau suivant
+var currency: int = 0            # Monnaie K
+```
+
 ## Ressources externes
 
 - [Documentation Godot 4](https://docs.godotengine.org/en/stable/)

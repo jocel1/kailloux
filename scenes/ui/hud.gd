@@ -5,6 +5,10 @@ extends Control
 @onready var interaction_hint: Label = $InteractionHint
 @onready var dialogue_box: PanelContainer = $DialogueBox
 @onready var dialogue_text: Label = $DialogueBox/MarginContainer/DialogueText
+@onready var health_bar: ProgressBar = $MarginContainer/VBoxContainer/TopBar/HealthContainer/HealthBar
+@onready var health_text: Label = $MarginContainer/VBoxContainer/TopBar/HealthContainer/HealthText
+@onready var level_label: Label = $MarginContainer/VBoxContainer/TopBar/LevelContainer/LevelLabel
+@onready var currency_label: Label = $MarginContainer/VBoxContainer/TopBar/LevelContainer/CurrencyLabel
 
 var dialogue_queue: Array[String] = []
 
@@ -12,12 +16,19 @@ func _ready() -> void:
 	dialogue_box.visible = false
 	interaction_hint.visible = false
 
-	# Connecter aux signaux de l'inventaire
+	# Connecter aux signaux
 	InventoryManager.inventory_changed.connect(_update_item_slots)
+	GameManager.currency_changed.connect(_update_currency)
+	GameManager.level_changed.connect(_update_level)
+	GameManager.player_died.connect(_on_player_died)
+
 	_update_item_slots()
+	_update_currency(GameManager.get_currency())
+	_update_level(GameManager.current_level)
 
 func _process(_delta: float) -> void:
 	_update_interaction_hint()
+	_update_health()
 
 func _update_item_slots() -> void:
 	var slots = item_slots.get_children()
@@ -34,7 +45,7 @@ func _update_item_slots() -> void:
 func _update_interaction_hint() -> void:
 	var player = GameManager.get_player()
 	if player and player.interactable_objects.size() > 0:
-		interaction_hint.text = "[E] Interagir"
+		interaction_hint.text = "[C] Interagir"
 		interaction_hint.visible = true
 	else:
 		interaction_hint.visible = false
@@ -60,3 +71,30 @@ func _input(event: InputEvent) -> void:
 func hide_dialogue() -> void:
 	dialogue_queue.clear()
 	dialogue_box.visible = false
+
+func _update_health() -> void:
+	var player = GameManager.get_player()
+	if player:
+		health_bar.max_value = player.MAX_HEALTH
+		health_bar.value = player.current_health
+		health_text.text = "%d / %d" % [player.current_health, player.MAX_HEALTH]
+
+		# Changer la couleur selon la vie
+		if player.current_health <= 1:
+			health_bar.modulate = Color(1, 0.3, 0.3)  # Rouge
+		elif player.current_health <= 2:
+			health_bar.modulate = Color(1, 0.7, 0.3)  # Orange
+		else:
+			health_bar.modulate = Color(0.3, 1, 0.3)  # Vert
+
+func _update_currency(amount: int) -> void:
+	currency_label.text = "%d K" % amount
+
+func _update_level(level: int) -> void:
+	level_label.text = "NIVEAU %d" % level
+	# Cacher le dialogue quand on change de niveau
+	hide_dialogue()
+
+func _on_player_died() -> void:
+	# Afficher un message de mort
+	show_dialogue("Tu es mort! Réapparition...")

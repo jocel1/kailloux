@@ -1,54 +1,46 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
-  <!-- Gem NPC - Cute Kirby-style - Sparkly precious stone -->
+  <!-- Gem NPC - Blob violet brillant avec mains -->
 
-  <!-- Magical glow -->
-  <ellipse cx="16" cy="17" rx="14" ry="13" fill="#E066FF" opacity="0.15"/>
-  <ellipse cx="16" cy="17" rx="12" ry="11" fill="#CC44EE" opacity="0.1"/>
+  <!-- Lueur magique -->
+  <ellipse cx="16" cy="16" rx="14" ry="13" fill="#DD88FF" opacity="0.2"/>
 
-  <!-- Main body - round sparkly purple -->
-  <ellipse cx="16" cy="17" rx="11" ry="10" fill="#9955DD"/>
+  <!-- Corps rond -->
+  <ellipse cx="16" cy="16" rx="11" ry="10" fill="#BB77DD"/>
 
-  <!-- Body highlight -->
-  <ellipse cx="11" cy="12" rx="5" ry="4" fill="#BB88EE" opacity="0.8"/>
-  <ellipse cx="9" cy="10" rx="2.5" ry="2" fill="#FFFFFF" opacity="0.6"/>
+  <!-- Reflet brillant -->
+  <ellipse cx="10" cy="10" rx="4" ry="3" fill="#FFFFFF" opacity="0.6"/>
+  <ellipse cx="8" cy="8" rx="2" ry="1.5" fill="#FFFFFF" opacity="0.4"/>
 
-  <!-- Facet shine -->
-  <path d="M20 10 L24 14 L22 12" fill="#FFFFFF" opacity="0.3"/>
+  <!-- Oeil gauche -->
+  <circle cx="11" cy="14" r="3" fill="#FFFFFF"/>
+  <circle cx="12" cy="14" r="1.8" fill="#8844AA"/>
+  <circle cx="11" cy="13" r="0.9" fill="#FFFFFF"/>
 
-  <!-- Cute blush (pink on purple!) -->
-  <ellipse cx="6" cy="17" rx="2" ry="1.2" fill="#FF99CC" opacity="0.5"/>
-  <ellipse cx="26" cy="15" rx="1.8" ry="1" fill="#FF99CC" opacity="0.45"/>
+  <!-- Oeil droit -->
+  <circle cx="20" cy="14" r="3.5" fill="#FFFFFF"/>
+  <circle cx="21" cy="14" r="2" fill="#8844AA"/>
+  <circle cx="20" cy="12.5" r="1" fill="#FFFFFF"/>
 
-  <!-- Left eye -->
-  <ellipse cx="11" cy="15" rx="3.5" ry="4.5" fill="#FFFFFF"/>
-  <ellipse cx="11" cy="15" rx="3.5" ry="4.5" fill="none" stroke="#6633AA" stroke-width="0.8"/>
-  <ellipse cx="12" cy="15" rx="2" ry="2.8" fill="#7733BB"/>
-  <circle cx="10" cy="13" r="1.3" fill="#FFFFFF"/>
+  <!-- Joues roses/violettes -->
+  <ellipse cx="5" cy="16" rx="2" ry="1.2" fill="#FF99DD" opacity="0.6"/>
+  <ellipse cx="27" cy="16" rx="2" ry="1.2" fill="#FF99DD" opacity="0.6"/>
 
-  <!-- Right eye (front, sparkly!) -->
-  <ellipse cx="20" cy="14" rx="4.5" ry="5.5" fill="#FFFFFF"/>
-  <ellipse cx="20" cy="14" rx="4.5" ry="5.5" fill="none" stroke="#6633AA" stroke-width="0.8"/>
-  <ellipse cx="21" cy="14" rx="2.5" ry="3.2" fill="#7733BB"/>
-  <circle cx="19" cy="12" r="1.7" fill="#FFFFFF"/>
-  <circle cx="22.5" cy="15" r="0.7" fill="#FFFFFF" opacity="0.8"/>
+  <!-- Sourire élégant -->
+  <path d="M13 19 Q16 21 19 19" stroke="#7744AA" stroke-width="1.3" fill="none" stroke-linecap="round"/>
 
-  <!-- Elegant smile -->
-  <path d="M17 20 Q19 22 22 20" stroke="#6633AA" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+  <!-- Petite main gauche -->
+  <ellipse cx="4" cy="18" rx="2.5" ry="2" fill="#9955BB"/>
+  <ellipse cx="4" cy="18" rx="2.5" ry="2" fill="none" stroke="#8855AA" stroke-width="0.8"/>
 
-  <!-- Sparkles! -->
-  <circle cx="7" cy="10" r="1.5" fill="#FFFFFF" opacity="0.9"/>
-  <circle cx="25" cy="12" r="1.2" fill="#FFFFFF" opacity="0.8"/>
-  <circle cx="5" cy="20" r="1" fill="#FFFFFF" opacity="0.7"/>
-  <circle cx="27" cy="20" r="0.8" fill="#FFFFFF" opacity="0.6"/>
+  <!-- Petite main droite -->
+  <ellipse cx="28" cy="18" rx="2.5" ry="2" fill="#9955BB"/>
+  <ellipse cx="28" cy="18" rx="2.5" ry="2" fill="none" stroke="#8855AA" stroke-width="0.8"/>
 
-  <!-- Body outline -->
-  <ellipse cx="16" cy="17" rx="11" ry="10" fill="none" stroke="#6633AA" stroke-width="1.3"/>
+  <!-- Étoiles scintillantes -->
+  <circle cx="6" cy="8" r="1.5" fill="#FFFFFF" opacity="0.9"/>
+  <circle cx="26" cy="10" r="1.2" fill="#FFFFFF" opacity="0.8"/>
+  <circle cx="4" cy="18" r="1" fill="#FFFFFF" opacity="0.7"/>
 
-  <!-- Small elegant arm -->
-  <ellipse cx="25" cy="19" rx="2.5" ry="2" fill="#8866CC"/>
-  <ellipse cx="25" cy="19" rx="2.5" ry="2" fill="none" stroke="#6633AA" stroke-width="0.8"/>
-
-  <!-- Cute feet -->
-  <ellipse cx="12" cy="26" rx="3.5" ry="1.8" fill="#7744BB"/>
-  <ellipse cx="20" cy="26.5" rx="3" ry="1.5" fill="#7744BB"/>
+  <!-- Contour -->
+  <ellipse cx="16" cy="16" rx="11" ry="10" fill="none" stroke="#8855AA" stroke-width="1.3"/>
 </svg>

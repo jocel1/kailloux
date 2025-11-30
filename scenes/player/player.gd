@@ -35,6 +35,12 @@ const DEATH_Y_THRESHOLD: float = 1000.0  # Fall death
 const SPRITE_NORMAL = "res://assets/sprites/player/kaillou_player.svg"
 const SPRITE_CANDLE = "res://assets/sprites/player/kaillou_player_candle.svg"
 
+# Projectile
+const ARM_PROJECTILE_SCENE = preload("res://scenes/player/arm_projectile.tscn")
+
+# Sound generator
+const SoundGenerator = preload("res://scripts/utils/sound_generator.gd")
+
 # Exports
 @export var has_candle: bool = false
 @export var has_double_jump: bool = false
@@ -52,6 +58,13 @@ const SPRITE_CANDLE = "res://assets/sprites/player/kaillou_player_candle.svg"
 @onready var dash_cooldown_timer: Timer = $DashCooldownTimer
 @onready var attack_cooldown_timer: Timer = $AttackCooldownTimer
 @onready var invincibility_timer: Timer = $InvincibilityTimer
+
+# Sons
+@onready var jump_sound: AudioStreamPlayer = $JumpSound
+@onready var shoot_sound: AudioStreamPlayer = $ShootSound
+@onready var hurt_sound: AudioStreamPlayer = $HurtSound
+@onready var death_sound: AudioStreamPlayer = $DeathSound
+@onready var coin_sound: AudioStreamPlayer = $CoinSound
 
 # State
 var facing_direction: int = 1  # 1 = right, -1 = left
@@ -76,8 +89,18 @@ func _ready() -> void:
 	GameManager.register_player(self)
 	_setup_timers()
 	_setup_signals()
+	_setup_sounds()
 	_load_player_sprite()
 	attack_hitbox.monitoring = false
+
+
+func _setup_sounds() -> void:
+	# Générer les sons synthétisés
+	jump_sound.stream = SoundGenerator.create_boing_sound()
+	shoot_sound.stream = SoundGenerator.create_shoot_sound()
+	hurt_sound.stream = SoundGenerator.create_hurt_sound()
+	death_sound.stream = SoundGenerator.create_death_sound()
+	coin_sound.stream = SoundGenerator.create_coin_sound()
 
 
 func _setup_timers() -> void:
@@ -198,16 +221,19 @@ func _handle_jump() -> void:
 			facing_direction = -facing_direction
 			has_jump_buffer = false
 			is_wall_sliding = false
+			jump_sound.play()
 		# Normal jump (with coyote time)
 		elif has_coyote:
 			velocity.y = JUMP_VELOCITY
 			has_coyote = false
 			has_jump_buffer = false
+			jump_sound.play()
 		# Double jump
 		elif can_double_jump:
 			velocity.y = JUMP_VELOCITY
 			can_double_jump = false
 			has_jump_buffer = false
+			jump_sound.play()
 
 	# Variable jump height
 	if Input.is_action_just_released("jump") and velocity.y < 0:
@@ -247,12 +273,18 @@ func _handle_horizontal_movement() -> void:
 		return
 
 	var direction = Input.get_axis("move_left", "move_right")
+	var current_speed = SPEED * _get_speed_multiplier()
 
 	if direction != 0:
-		velocity.x = direction * SPEED
+		velocity.x = direction * current_speed
 		facing_direction = int(sign(direction))
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED * 0.3)
+		velocity.x = move_toward(velocity.x, 0, current_speed * 0.3)
+
+func _get_speed_multiplier() -> float:
+	if has_meta("speed_multiplier"):
+		return get_meta("speed_multiplier")
+	return 1.0
 
 
 func _handle_attack_input() -> void:
@@ -279,23 +311,40 @@ func attack() -> void:
 	else:
 		attack_direction = Vector2(facing_direction, 0)
 
-	# Position attack hitbox
-	attack_hitbox.position = attack_direction * ATTACK_RANGE
-	attack_hitbox.monitoring = true
-
-	# Force physics update and check for already-overlapping bodies
-	await get_tree().physics_frame
-	_check_attack_hits()
+	# Lancer la main comme projectile!
+	_throw_arm(attack_direction)
+	shoot_sound.play()
 
 	# Play animation
 	_play_attack_animation()
 
 	attacked.emit(attack_direction)
 
-	# Disable hitbox after short time
-	await get_tree().create_timer(0.15).timeout
-	attack_hitbox.monitoring = false
+	# Reset attack state after short time
+	await get_tree().create_timer(0.2).timeout
 	is_attacking = false
+
+
+func _throw_arm(direction: Vector2) -> void:
+	# Créer le projectile
+	var projectile = ARM_PROJECTILE_SCENE.instantiate()
+	projectile.direction = direction.normalized()
+	projectile.shooter = self
+
+	# Position de départ (centre du joueur, pas les pieds)
+	# Le centre du sprite est à y=-14 par rapport à global_position
+	var center_offset = Vector2(0, -14)
+	var spawn_offset = direction * 25
+	projectile.global_position = global_position + center_offset + spawn_offset
+
+	# Ajouter au monde
+	get_tree().current_scene.add_child(projectile)
+
+	print("Main lancée vers: ", direction)
+
+	# Pogo bounce si attaque vers le bas
+	if direction == Vector2.DOWN and not is_on_floor():
+		velocity.y = POGO_VELOCITY
 
 
 func _check_attack_hits() -> void:
@@ -382,6 +431,9 @@ func take_damage(amount: int, knockback_dir: Vector2 = Vector2.ZERO) -> void:
 	# Visual feedback
 	sprite.modulate = Color(1, 0.3, 0.3, 1)
 
+	# Son de dégât
+	hurt_sound.play()
+
 	damaged.emit(amount)
 
 	if current_health <= 0:
@@ -397,7 +449,12 @@ func gain_soul(amount: float) -> void:
 	soul = min(soul + amount, 100.0)
 
 
+func play_coin_sound() -> void:
+	coin_sound.play()
+
+
 func die() -> void:
+	death_sound.play()
 	died.emit()
 	# Respawn at checkpoint
 	GameManager.respawn_player()
