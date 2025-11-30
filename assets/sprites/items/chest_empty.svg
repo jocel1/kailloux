@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <!-- Chest Empty - Coffre ouvert et vide (plus terne) -->
+
+  <!-- Shadow -->
+  <ellipse cx="16" cy="30" rx="12" ry="2" fill="#00000033"/>
+
+  <!-- Chest body (desaturated) -->
+  <rect x="4" y="16" width="24" height="12" rx="2" fill="#6B5043"/>
+
+  <!-- Inside of chest (dark and empty) -->
+  <rect x="6" y="16" width="20" height="6" fill="#2D1D14"/>
+
+  <!-- Dust particles -->
+  <circle cx="10" cy="19" r="0.5" fill="#8B7355" opacity="0.5"/>
+  <circle cx="16" cy="18" r="0.5" fill="#8B7355" opacity="0.4"/>
+  <circle cx="22" cy="19" r="0.5" fill="#8B7355" opacity="0.5"/>
+
+  <!-- Body outline -->
+  <rect x="4" y="16" width="24" height="12" rx="2" fill="none" stroke="#3D2314" stroke-width="1.5"/>
+
+  <!-- Metal band on body (tarnished) -->
+  <rect x="3" y="22" width="26" height="2" fill="#9A8520"/>
+
+  <!-- Lid (open, tilted back) - desaturated -->
+  <path d="M 2 16 L 4 4 Q 16 1 28 4 L 30 16 Z" fill="#7A5232"/>
+
+  <!-- Lid inside -->
+  <path d="M 4 15 L 5 6 Q 16 4 27 6 L 28 15 Z" fill="#4D3321"/>
+
+  <!-- Lid highlight (faded) -->
+  <path d="M 6 10 Q 16 7 26 10 L 25 6 Q 16 4 7 6 Z" fill="#8B6B4F" opacity="0.4"/>
+
+  <!-- Lid outline -->
+  <path d="M 2 16 L 4 4 Q 16 1 28 4 L 30 16" fill="none" stroke="#3D2314" stroke-width="1.5"/>
+
+  <!-- Metal band on lid (tarnished) -->
+  <path d="M 3 15 L 4.5 5 Q 16 2.5 27.5 5 L 29 15" fill="none" stroke="#9A8520" stroke-width="2"/>
+
+  <!-- Corner decorations (tarnished) -->
+  <circle cx="6" cy="18" r="1.5" fill="#9A8520"/>
+  <circle cx="26" cy="18" r="1.5" fill="#9A8520"/>
+  <circle cx="6" cy="26" r="1.5" fill="#9A8520"/>
+  <circle cx="26" cy="26" r="1.5" fill="#9A8520"/>
+
+  <!-- Cobweb in corner -->
+  <path d="M 7 17 L 10 17 M 7 17 L 8 19 M 7 17 L 9 18" stroke="#CCCCCC" stroke-width="0.3" opacity="0.5"/>
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="24" viewBox="0 0 32 24">
+  <!-- Rock - Rocher décoratif -->
+
+  <!-- Shadow -->
+  <ellipse cx="16" cy="22" rx="14" ry="3" fill="#00000033"/>
+
+  <!-- Rock body -->
+  <polygon points="4,18 2,12 6,6 14,4 22,6 28,4 30,10 28,18 20,20 12,20" fill="#808080"/>
+
+  <!-- Rock highlights -->
+  <polygon points="6,14 4,10 8,7 14,6 18,8 14,12" fill="#A0A0A0" opacity="0.6"/>
+  <polygon points="22,8 26,6 28,10 24,14" fill="#909090" opacity="0.5"/>
+
+  <!-- Rock shadows -->
+  <polygon points="12,18 8,16 10,14 16,16 20,18" fill="#606060" opacity="0.5"/>
+
+  <!-- Rock outline -->
+  <polygon points="4,18 2,12 6,6 14,4 22,6 28,4 30,10 28,18 20,20 12,20" fill="none" stroke="#505050" stroke-width="1.5"/>
+
+  <!-- Crack details -->
+  <path d="M 14 8 L 12 12 L 14 14" stroke="#606060" stroke-width="0.8" fill="none"/>
+  <path d="M 22 10 L 24 14" stroke="#606060" stroke-width="0.8" fill="none"/>
+</svg>

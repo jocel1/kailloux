@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <!-- Emote Zzz - Bulle de sommeil -->
+
+  <!-- Thought bubble (cloud shape) -->
+  <ellipse cx="12" cy="8" rx="9" ry="6" fill="white"/>
+  <circle cx="6" cy="10" r="3" fill="white"/>
+  <circle cx="18" cy="10" r="3" fill="white"/>
+  <circle cx="8" cy="5" r="2.5" fill="white"/>
+  <circle cx="16" cy="5" r="2.5" fill="white"/>
+
+  <!-- Outline -->
+  <ellipse cx="12" cy="8" rx="9" ry="6" fill="none" stroke="#6B7B8C" stroke-width="1"/>
+  <circle cx="6" cy="10" r="3" fill="none" stroke="#6B7B8C" stroke-width="1"/>
+  <circle cx="18" cy="10" r="3" fill="none" stroke="#6B7B8C" stroke-width="1"/>
+
+  <!-- Small bubbles going down -->
+  <circle cx="10" cy="17" r="2" fill="white" stroke="#6B7B8C" stroke-width="0.8"/>
+  <circle cx="8" cy="21" r="1.2" fill="white" stroke="#6B7B8C" stroke-width="0.6"/>
+
+  <!-- "Z" letters -->
+  <text x="8" y="10" font-family="Arial, sans-serif" font-size="6" font-weight="bold" fill="#6B7B8C">Z</text>
+  <text x="11" y="8" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#6B7B8C">Z</text>
+  <text x="15" y="11" font-family="Arial, sans-serif" font-size="5" font-weight="bold" fill="#6B7B8C">z</text>
+</svg>

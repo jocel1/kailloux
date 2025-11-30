@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <!-- Tile Grass Dark - Herbe foncee pour foret -->
+  <rect width="16" height="16" fill="#3D5C2A"/>
+
+  <!-- Variation de texture -->
+  <circle cx="4" cy="5" r="1.2" fill="#2D4C1A" opacity="0.6"/>
+  <circle cx="11" cy="8" r="1" fill="#4D6C3A" opacity="0.5"/>
+  <circle cx="6" cy="13" r="1" fill="#2D4C1A" opacity="0.5"/>
+
+  <!-- Ombres -->
+  <circle cx="8" cy="3" r="1.5" fill="#2D4C1A" opacity="0.3"/>
+  <circle cx="2" cy="11" r="1" fill="#2D4C1A" opacity="0.4"/>
+</svg>

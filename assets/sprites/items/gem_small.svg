@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <!-- Small Gem - Petite gemme collectible -->
+
+  <!-- Glow -->
+  <ellipse cx="8" cy="8" rx="7" ry="6" fill="#87CEEB" opacity="0.3"/>
+
+  <!-- Gem body -->
+  <polygon points="8,1 14,5 14,11 8,15 2,11 2,5" fill="#4FC3F7"/>
+
+  <!-- Facets -->
+  <polygon points="8,3 12,6 8,9 4,6" fill="#81D4FA"/>
+  <polygon points="12,6 13,10 8,9" fill="#29B6F6" opacity="0.8"/>
+  <polygon points="4,6 3,10 8,9" fill="#B3E5FC" opacity="0.8"/>
+
+  <!-- Outline -->
+  <polygon points="8,1 14,5 14,11 8,15 2,11 2,5" fill="none" stroke="#0288D1" stroke-width="1"/>
+
+  <!-- Shine -->
+  <polygon points="5,4 7,3 6,5" fill="white" opacity="0.9"/>
+  <circle cx="6" cy="4" r="0.8" fill="white"/>
+</svg>

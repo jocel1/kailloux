@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <!-- Tile Sand - Sable -->
+  <rect width="16" height="16" fill="#E8D4A8"/>
+
+  <!-- Grains de sable -->
+  <circle cx="3" cy="4" r="0.5" fill="#D4C090" opacity="0.7"/>
+  <circle cx="8" cy="2" r="0.4" fill="#C8B480" opacity="0.6"/>
+  <circle cx="12" cy="6" r="0.5" fill="#D4C090" opacity="0.5"/>
+  <circle cx="5" cy="9" r="0.4" fill="#C8B480" opacity="0.6"/>
+  <circle cx="14" cy="11" r="0.5" fill="#D4C090" opacity="0.5"/>
+  <circle cx="2" cy="13" r="0.4" fill="#C8B480" opacity="0.6"/>
+  <circle cx="10" cy="14" r="0.5" fill="#D4C090" opacity="0.5"/>
+  <circle cx="7" cy="7" r="0.3" fill="#F0E0B8" opacity="0.4"/>
+</svg>

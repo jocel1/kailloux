@@ -1,0 +1,98 @@
+[gd_scene load_steps=2 format=3 uid="uid://hud3kaillouxui"]
+
+[ext_resource type="Script" path="res://scenes/ui/hud.gd" id="1_hud"]
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hud")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = -16.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="ItemSlots" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Slot1" type="PanelContainer" parent="MarginContainer/VBoxContainer/ItemSlots"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/ItemSlots/Slot1"]
+layout_mode = 2
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slot2" type="PanelContainer" parent="MarginContainer/VBoxContainer/ItemSlots"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/ItemSlots/Slot2"]
+layout_mode = 2
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slot3" type="PanelContainer" parent="MarginContainer/VBoxContainer/ItemSlots"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/ItemSlots/Slot3"]
+layout_mode = 2
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InteractionHint" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -80.0
+offset_top = -60.0
+offset_right = 80.0
+offset_bottom = -40.0
+text = "[E] Interagir"
+horizontal_alignment = 1
+
+[node name="DialogueBox" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_top = -150.0
+offset_right = 300.0
+offset_bottom = -50.0
+
+[node name="MarginContainer" type="MarginContainer" parent="DialogueBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="DialogueText" type="Label" parent="DialogueBox/MarginContainer"]
+layout_mode = 2
+text = "Dialogue text here..."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2

@@ -1,0 +1,56 @@
+{
+  "small_gem": {
+    "id": "small_gem",
+    "name": "Petite Gemme",
+    "description": "Une jolie gemme brillante. Les kailloux l'adorent!",
+    "type": "collectible",
+    "stackable": true
+  },
+  "fan": {
+    "id": "fan",
+    "name": "Eventail",
+    "description": "Un eventail magique. Peut creer du vent pour pousser des objets, faire peur aux oiseaux, ou etre lance sur quelqu'un.",
+    "type": "usable",
+    "stackable": false,
+    "actions": ["wind", "scare_birds", "throw"]
+  },
+  "slingshot": {
+    "id": "slingshot",
+    "name": "Lance-pierres",
+    "description": "Un lance-pierres robuste. Peut casser des echelles, activer des mecanismes a distance, ou toucher d'autres kailloux.",
+    "type": "usable",
+    "stackable": false,
+    "actions": ["break_ladder", "activate_mechanism", "throw"]
+  },
+  "candle": {
+    "id": "candle",
+    "name": "Bougie",
+    "description": "Une bougie qui peut etre portee sur la tete. Eclaire les zones sombres et peut allumer des feux.",
+    "type": "usable",
+    "stackable": false,
+    "actions": ["light", "start_fire", "wear_on_head"]
+  },
+  "key_town": {
+    "id": "key_town",
+    "name": "Cle de la Ville",
+    "description": "Une vieille cle rouillee qui ouvre certaines portes en ville.",
+    "type": "key",
+    "stackable": false
+  },
+  "key_wilderness": {
+    "id": "key_wilderness",
+    "name": "Cle des Terres Sauvages",
+    "description": "Une cle grossiere taillee dans la pierre, pour les grottes sauvages.",
+    "type": "key",
+    "stackable": false
+  },
+  "healing_moss": {
+    "id": "healing_moss",
+    "name": "Mousse Guerisseuse",
+    "description": "Une mousse rare qui peut soigner les blessures des kailloux.",
+    "type": "consumable",
+    "stackable": true,
+    "effect": "heal",
+    "value": 1
+  }
+}

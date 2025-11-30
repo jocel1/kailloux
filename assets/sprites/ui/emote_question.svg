@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <!-- Emote Question - Bulle d'interrogation -->
+
+  <!-- Speech bubble -->
+  <path d="M 4 4 Q 4 2 6 2 L 18 2 Q 20 2 20 4 L 20 14 Q 20 16 18 16 L 14 16 L 12 20 L 10 16 L 6 16 Q 4 16 4 14 Z" fill="white"/>
+  <path d="M 4 4 Q 4 2 6 2 L 18 2 Q 20 2 20 4 L 20 14 Q 20 16 18 16 L 14 16 L 12 20 L 10 16 L 6 16 Q 4 16 4 14 Z" fill="none" stroke="#6B7B8C" stroke-width="1.5"/>
+
+  <!-- "?" mark -->
+  <path d="M 10 5 Q 10 4 12 4 Q 14 4 14 6 Q 14 8 12 9 L 12 10" fill="none" stroke="#6B7B8C" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="12" cy="13" r="1" fill="#6B7B8C"/>
+</svg>

@@ -1,0 +1,59 @@
+{
+  "main_quest": {
+    "id": "main_quest",
+    "title": "Prouver sa Valeur de Kaillou",
+    "description": "Tu dois prouver que tu es un vrai kaillou en explorant la ville et les terres sauvages.",
+    "objectives": [
+      "Explorer la ville et parler aux habitants",
+      "Trouver l'Eventail cache",
+      "Obtenir le Lance-pierres du gardien",
+      "Recuperer la Bougie dans les terres sauvages",
+      "Retourner voir le Grand Granit"
+    ],
+    "rewards": ["badge_hero"]
+  },
+  "quest_fan": {
+    "id": "quest_fan",
+    "title": "Le Souffle du Vent",
+    "description": "Un vieux kaillou sage t'a parle d'un eventail magique cache quelque part en ville.",
+    "objectives": [
+      "Trouver le coffre cache pres de la fontaine",
+      "Ouvrir le coffre"
+    ],
+    "rewards": ["fan"]
+  },
+  "quest_slingshot": {
+    "id": "quest_slingshot",
+    "title": "L'Epreuve du Gardien",
+    "description": "Le gardien Granit acceptera de te donner son lance-pierres si tu prouves ta precision.",
+    "objectives": [
+      "Parler au gardien Granit",
+      "Toucher les 3 cibles d'entrainement",
+      "Retourner voir le gardien"
+    ],
+    "rewards": ["slingshot"]
+  },
+  "quest_candle": {
+    "id": "quest_candle",
+    "title": "La Lumiere des Profondeurs",
+    "description": "Une bougie magique est cachee dans une grotte des terres sauvages.",
+    "objectives": [
+      "Explorer les terres sauvages",
+      "Trouver l'entree de la grotte",
+      "Naviguer dans l'obscurite",
+      "Recuperer la bougie"
+    ],
+    "rewards": ["candle"]
+  },
+  "quest_help_gravel": {
+    "id": "quest_help_gravel",
+    "title": "Le Petit Gravier Perdu",
+    "description": "Un petit gravier nerveux a perdu ses affaires. Aide-le a les retrouver!",
+    "objectives": [
+      "Parler au petit gravier",
+      "Retrouver sa gemme preferee",
+      "Lui rapporter la gemme"
+    ],
+    "rewards": ["small_gem", "small_gem", "small_gem"]
+  }
+}

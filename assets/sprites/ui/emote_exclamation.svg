@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <!-- Emote Exclamation - Bulle de surprise/alerte -->
+
+  <!-- Spiky speech bubble -->
+  <polygon points="12,1 14,4 18,2 16,6 21,6 17,9 20,12 16,12 18,16 14,14 12,18 10,14 6,16 8,12 4,12 7,9 3,6 8,6 6,2 10,4" fill="#FFE066"/>
+  <polygon points="12,1 14,4 18,2 16,6 21,6 17,9 20,12 16,12 18,16 14,14 12,18 10,14 6,16 8,12 4,12 7,9 3,6 8,6 6,2 10,4" fill="none" stroke="#E6AC00" stroke-width="1.5"/>
+
+  <!-- Inner circle -->
+  <circle cx="12" cy="9" r="5" fill="white"/>
+  <circle cx="12" cy="9" r="5" fill="none" stroke="#E6AC00" stroke-width="1"/>
+
+  <!-- "!" mark -->
+  <rect x="11" y="5" width="2" height="5" rx="0.5" fill="#E6AC00"/>
+  <circle cx="12" cy="12" r="1" fill="#E6AC00"/>
+
+  <!-- Small tail -->
+  <polygon points="12,18 10,21 14,21" fill="#FFE066" stroke="#E6AC00" stroke-width="1"/>
+</svg>

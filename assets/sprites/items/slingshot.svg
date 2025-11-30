@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <!-- Slingshot - Lance-pierres en bois -->
+
+  <!-- Left fork -->
+  <path d="M 8 2 Q 6 8 8 14 L 10 14 Q 8 8 10 4 Z" fill="#8B4513"/>
+  <path d="M 8 2 Q 6 8 8 14 L 10 14 Q 8 8 10 4 Z" fill="none" stroke="#5D2E0C" stroke-width="1"/>
+
+  <!-- Right fork -->
+  <path d="M 24 2 Q 26 8 24 14 L 22 14 Q 24 8 22 4 Z" fill="#8B4513"/>
+  <path d="M 24 2 Q 26 8 24 14 L 22 14 Q 24 8 22 4 Z" fill="none" stroke="#5D2E0C" stroke-width="1"/>
+
+  <!-- Handle -->
+  <path d="M 12 14 L 14 30 L 18 30 L 20 14 Q 16 16 12 14 Z" fill="#A0522D"/>
+  <path d="M 12 14 L 14 30 L 18 30 L 20 14 Q 16 16 12 14 Z" fill="none" stroke="#5D2E0C" stroke-width="1"/>
+
+  <!-- Handle grip wrap -->
+  <path d="M 13 18 L 19 17" stroke="#DEB887" stroke-width="2"/>
+  <path d="M 13.5 21 L 18.5 20" stroke="#DEB887" stroke-width="2"/>
+  <path d="M 14 24 L 18 23" stroke="#DEB887" stroke-width="2"/>
+  <path d="M 14.5 27 L 17.5 26" stroke="#DEB887" stroke-width="2"/>
+
+  <!-- Elastic band -->
+  <path d="M 9 3 Q 16 10 23 3" fill="none" stroke="#4A4A4A" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Elastic band highlights -->
+  <path d="M 9 3 Q 12 6 16 7" fill="none" stroke="#6A6A6A" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- Pouch -->
+  <ellipse cx="16" cy="8" rx="3" ry="2" fill="#8B6914"/>
+  <ellipse cx="16" cy="8" rx="3" ry="2" fill="none" stroke="#5D4A0C" stroke-width="0.8"/>
+
+  <!-- Wood grain detail -->
+  <path d="M 9 6 Q 9.5 8 9 10" stroke="#6B3A0C" stroke-width="0.5" fill="none"/>
+  <path d="M 23 6 Q 22.5 8 23 10" stroke="#6B3A0C" stroke-width="0.5" fill="none"/>
+
+  <!-- Small pebble in pouch -->
+  <circle cx="16" cy="8" r="1.5" fill="#808080"/>
+  <circle cx="15.5" cy="7.5" r="0.5" fill="#A0A0A0"/>
+</svg>

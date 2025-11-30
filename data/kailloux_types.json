@@ -1,0 +1,65 @@
+{
+  "galet": {
+    "id": "galet",
+    "name": "Galet",
+    "description": "Rond et poli par les vagues, le galet est doux et amical.",
+    "base_color": "#B3B3CC",
+    "scale": 1.0,
+    "personality_traits": ["friendly", "calm", "helpful"],
+    "dialogue_style": "kind"
+  },
+  "silex": {
+    "id": "silex",
+    "name": "Silex",
+    "description": "Anguleux et tranchant, le silex a une personnalite bien affirmee.",
+    "base_color": "#665950",
+    "scale": 1.0,
+    "personality_traits": ["grumpy", "direct", "honest"],
+    "dialogue_style": "blunt"
+  },
+  "granit": {
+    "id": "granit",
+    "name": "Granit",
+    "description": "Gros et solide, le granit est le protecteur de la communaute.",
+    "base_color": "#998C8C",
+    "scale": 1.5,
+    "personality_traits": ["protective", "wise", "slow"],
+    "dialogue_style": "formal"
+  },
+  "gem": {
+    "id": "gem",
+    "name": "Pierre Precieuse",
+    "description": "Rare et brillante, la pierre precieuse est un personnage important.",
+    "base_color": "#CC4DE6",
+    "scale": 1.2,
+    "personality_traits": ["noble", "mysterious", "powerful"],
+    "dialogue_style": "elegant"
+  },
+  "gravel": {
+    "id": "gravel",
+    "name": "Gravier",
+    "description": "Petit et nerveux, le gravier connait tous les secrets.",
+    "base_color": "#807366",
+    "scale": 0.7,
+    "personality_traits": ["shy", "nervous", "helpful"],
+    "dialogue_style": "whisper"
+  },
+  "obsidian": {
+    "id": "obsidian",
+    "name": "Obsidienne",
+    "description": "Noire et lisse comme un miroir, l'obsidienne est enigmatique.",
+    "base_color": "#1A1A2E",
+    "scale": 1.1,
+    "personality_traits": ["mysterious", "silent", "observant"],
+    "dialogue_style": "cryptic"
+  },
+  "quartz": {
+    "id": "quartz",
+    "name": "Quartz",
+    "description": "Transparent et pur, le quartz voit au-dela des apparences.",
+    "base_color": "#E6E6FA",
+    "scale": 1.0,
+    "personality_traits": ["wise", "serene", "truthful"],
+    "dialogue_style": "philosophical"
+  }
+}

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <!-- Tile Flowers - Herbe avec fleurs -->
+  <rect width="16" height="16" fill="#5B8C3E"/>
+
+  <!-- Brins d'herbe -->
+  <line x1="2" y1="10" x2="2" y2="7" stroke="#4A7832" stroke-width="0.5"/>
+  <line x1="14" y1="12" x2="14" y2="9" stroke="#4A7832" stroke-width="0.5"/>
+
+  <!-- Fleur rouge -->
+  <circle cx="5" cy="5" r="2" fill="#FF6B6B"/>
+  <circle cx="5" cy="5" r="0.8" fill="#FFE066"/>
+
+  <!-- Fleur jaune -->
+  <circle cx="12" cy="10" r="1.5" fill="#FFE066"/>
+  <circle cx="12" cy="10" r="0.5" fill="#FF9F43"/>
+
+  <!-- Fleur bleue -->
+  <circle cx="8" cy="13" r="1.5" fill="#74B9FF"/>
+  <circle cx="8" cy="13" r="0.5" fill="#0984E3"/>
+
+  <!-- Petite fleur -->
+  <circle cx="3" cy="12" r="1" fill="#FD79A8"/>
+</svg>

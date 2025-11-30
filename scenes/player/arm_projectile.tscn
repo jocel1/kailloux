@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dq8m2r4xvn6fp"]
+
+[ext_resource type="Script" path="res://scenes/player/arm_projectile.gd" id="1_projectile"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_projectile"]
+radius = 8.0
+
+[node name="ArmProjectile" type="Area2D"]
+collision_layer = 16
+collision_mask = 14
+script = ExtResource("1_projectile")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_projectile")
+
+[node name="LifetimeTimer" type="Timer" parent="."]
